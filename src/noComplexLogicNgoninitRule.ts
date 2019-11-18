@@ -16,8 +16,7 @@ class Walker extends Lint.RuleWalker {
         if (node && node.name && (node.end - node.pos) >= 800 && node.name.getText() === 'ngOnInit') {
             this.addFailureAtNode(node, Rule.failureString(node.name.getText()));
         }
-
         super.visitMethodDeclaration(node);
     }
-
+ 
 }

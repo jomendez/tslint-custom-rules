@@ -1,13 +1,15 @@
 {
   "rulesDirectory": [
-    "./dist"
-  ],
+    "./jo-custom-ts-rules"
+  ], 
   "rules": {
     "no-debugger": true,
     "no-focused-test": true,
     "no-consolelog": true,
     "no-untyped-public-signature": true,
     "no-empty-method": true,
-    "no-complex-logic-ngoninit": true
+    "no-complex-logic-ngoninit": true,
+    "no-subscribe-without-unsubscribe": true,
+    "no-commented-code": true
   }
 }

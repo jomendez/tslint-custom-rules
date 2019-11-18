@@ -1,20 +1,13 @@
 import { getFixedResult, helper } from '../lintRunner';
 import { Rule } from '../noDebuggerRule';
 
-const rule = 'my-custom';
+const rule = 'no-debugger';
 
-describe('myCustomRule test examples [actually a sample rule that disallows debugger statements]', () => {
+describe('No debuger statement', () => {
     it(`testing failure example`, () => {
         const src = `debugger;`;
         const result = helper({ src, rule });
         expect(result.errorCount).toBe(1);
-    });
-
-    it(`testing not failure example`, () => {
-        const src = `console.log(1);`;
-        const result = helper({ src, rule });
-        expect(result.errorCount).toBe(0);
-        
     });
 
     it(`testing position example`, () => {
@@ -35,24 +28,4 @@ describe('myCustomRule test examples [actually a sample rule that disallows debu
         expect(failure.getFailure()).toBe(Rule.FAILURE_STRING);
     });
 
-    it('testing fixer example', () => {
-        const src = `debugger;`;
-        const output = ``;
-
-        const result = helper({ src, rule });
-        expect(result.errorCount).toBe(1);
-        expect(getFixedResult({ src, rule })).toEqual(output);
-    });
 });
-
-class test {
-
-    public test(): void {
-
-    }
-
-    test1(): void {
-        this.test;
-    }
-
-}

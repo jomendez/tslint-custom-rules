@@ -1,7 +1,7 @@
 import {Configuration, Linter, Replacement} from 'tslint';
 
 export const helper = ({src, rule}) => {
-    const linter = new Linter({fix: false});
+    const linter = new Linter({fix: true});
     linter.lint('', src, Configuration.parseConfigFile({
         rules: {
             [rule.name || rule]: [true, ...rule.options]
