@@ -18,7 +18,9 @@ To use these rules in you VS Code project run the following command:
 
 `./scripts/build-copy-rules.sh <path_to_your_project>`
 
-This will build the project and create a folder `jo-custom-ts-rules` with the rules in the root of your project, then you need to copy the rules displayed in your console in you `tslint.json` file
+This will build the project and create a folder `jo-custom-ts-rules` with the rules in the root of your project, then you need to copy the rules displayed in your console in you `tslint.json` .
+
+You can turn an specific rule off by set it to false
 
 ```json
 {
@@ -36,4 +38,14 @@ This will build the project and create a folder `jo-custom-ts-rules` with the ru
     "no-commented-code": true
   }
 }
-`
+
+```
+
+## Rules:
+ - no-debugger: prevents leave debugger statements in the code
+ - no-focused-test: prevent fdescrive fit 
+ - no-consolelog: prevent leave console.log() statement in the code
+ - no-untyped-public-signature: prevent untyped methods and untyped method's parameters 
+ - no-empty-method: prevent leave empty methods in the code
+ - no-complex-logic-ngoninit: prevent having complex logic in onNgInit() method
+ - no-subscribe-without-unsubscribe: prevent subscribe without add the subscription to the unsubscribe array.
