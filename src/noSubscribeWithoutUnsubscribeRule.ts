@@ -20,18 +20,17 @@ class Walk extends Lint.RuleWalker {
     private addSubscribeWithoutUnsubscribe(
         node: ts.MethodDeclaration,
     ) {
-        if (this.containSubscribe(node) && !this.containSubscriptionArray(node)) { 
+        if (this.containSubscribe(node) && !this.containSubscriptionArray(node)) {
             this.addFailureAtNode(node, Rule.FAILURE_STRING);
         }
     }
 
     private containSubscribe(node: ts.MethodDeclaration): boolean {
-        return node.body.statements.some(st => st.getFullText().includes('.subscribe('));
-
+        return node && node.body && node.body.statements ? node.body.statements.some(st => st.getFullText().includes('.subscribe(')) : false;
     }
 
     private containSubscriptionArray(node: ts.MethodDeclaration): boolean {
-        return node.body.statements.some(st => st.getFullText().includes('subscriptions.push('));
+        return node && node.body && node.body.statements ? node.body.statements.some(st => st.getFullText().includes('subscriptions.push(')) : false;
 
     }
 }
