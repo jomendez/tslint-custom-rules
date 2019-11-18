@@ -3,6 +3,8 @@
 
 Set of TSLint custom rules, includes unit testing.
 
+Clone the project in your computer, then run `npm install` to install all the dependencies.
+
 Find the tests files in `./test` folder (the `.spec`), change the rues on the `/src` folder, and then run `npm test` to check everything is as expected.
 
 Notes: 
@@ -16,7 +18,7 @@ To use these rules in you VS Code project run the following command:
 
 `./scripts/build-copy-rules.sh <path_to_your_project>`
 
-This will create a folder `jo-custom-ts-rules` with the rules in the root of your project, then you need to copy the rules displayed in your console in you `tslint.json` file
+This will build the project and create a folder `jo-custom-ts-rules` with the rules in the root of your project, then you need to copy the rules displayed in your console in you `tslint.json` file
 
 ```json
 {
