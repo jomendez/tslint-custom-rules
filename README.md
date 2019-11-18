@@ -43,7 +43,7 @@ You can turn an specific rule off by set it to false
 
 ## Rules:
  - no-debugger: prevents leave debugger statements in the code
- - no-focused-test: prevent fdescrive fit 
+ - no-focused-test: prevent fdescribe() fit()
  - no-consolelog: prevent leave console.log() statement in the code
  - no-untyped-public-signature: prevent untyped methods and untyped method's parameters 
  - no-empty-method: prevent leave empty methods in the code
