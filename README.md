@@ -1,8 +1,37 @@
 # tslint-custom-rules
 
 
-Set of TSLint custom rules, implemented unit testing.
+Set of TSLint custom rules, includes unit testing.
 
 Find the tests files in `./test` folder (the `.spec`), change the rues on the `/src` folder, and then run `npm test` to check everything is as expected.
 
-After your rule is ready you can compile it using `npm run build`, and use the results in the `dist` folder.
+Notes: 
+The test wont work if you have Nodejs 11.11.0 version installed
+https://github.com/facebook/jest/issues/8069
+to fix the issue you should downgrade to 11.10.1 (you can use nvm)
+
+After your rule is ready you can compile it using `npm run build`, and use the results in the `jo-custom-ts-rules` folder.
+
+To use these rules in you VS Code project run the following command:
+
+`./scripts/build-copy-rules.sh <path_to_your_project>`
+
+This will create a folder `jo-custom-ts-rules` with the rules in the root of your project, then you need to copy the rules displayed in your console in you `tslint.json` file
+
+```json
+{
+  "rulesDirectory": [
+    "./jo-custom-ts-rules"
+  ],
+  "rules": {
+    "no-debugger": true,
+    "no-focused-test": true,
+    "no-consolelog": true,
+    "no-untyped-public-signature": true,
+    "no-empty-method": true,
+    "no-complex-logic-ngoninit": true,
+    "no-subscribe-without-unsubscribe": true,
+    "no-commented-code": true
+  }
+}
+`

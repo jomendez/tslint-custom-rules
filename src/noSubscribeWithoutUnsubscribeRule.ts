@@ -20,7 +20,7 @@ class Walk extends Lint.RuleWalker {
     private addSubscribeWithoutUnsubscribe(
         node: ts.MethodDeclaration,
     ) {
-        if (this.containSubscribe(node) && !this.containSubscriptionArray(node)) {
+        if (this.containSubscribe(node) && !this.containSubscriptionArray(node) && !this.containTakeOneOperator(node)) {
             this.addFailureAtNode(node, Rule.FAILURE_STRING);
         }
     }
@@ -31,6 +31,9 @@ class Walk extends Lint.RuleWalker {
 
     private containSubscriptionArray(node: ts.MethodDeclaration): boolean {
         return node && node.body && node.body.statements ? node.body.statements.some(st => st.getFullText().includes('subscriptions.push(')) : false;
-
+    }
+    
+    private containTakeOneOperator(node: ts.MethodDeclaration): boolean {
+        return node && node.body && node.body.statements ? node.body.statements.some(st => st.getFullText().includes('take(1)')) : false;
     }
 }
