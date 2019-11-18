@@ -65,4 +65,12 @@ describe('noCommentRule', (): void => {
         const result = helper({ src: script, rule });
         expect(result.errorCount).toBe(1);
     });
+    
+    it('should fail code commented 2', (): void => {
+        const script: string = `
+        // const firestore = firebase.firestore();
+    `;
+        const result = helper({ src: script, rule });
+        expect(result.errorCount).toBe(1);
+    });
 });

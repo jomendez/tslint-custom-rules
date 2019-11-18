@@ -2,16 +2,6 @@
 
 RULESNAME='jo-custom-ts-rules'
 
-cmd() {
-  echo ""
-  echo "=> $1"
-  eval $1
-  rc=$?; if [[ $rc != 0 ]]; then 
-    echo "COMMAND FAILED: $1"
-    exit $rc; 
-  fi
-}
-
 echo "$1"
 if [ -z "$1" ]
   then
