@@ -25,6 +25,7 @@ class Walk extends Lint.RuleWalker {
         }
     }
 
+    // tslint:disable-next-line:no-subscribe-without-unsubscribe
     private containSubscribe(node: ts.MethodDeclaration): boolean {
         return node && node.body && node.body.statements ? node.body.statements.some(st => st.getFullText().includes('.subscribe(')) : false;
     }

@@ -19,6 +19,7 @@ fi
 
 # cmd vm -f dist $RULES_NAME
 cp -avr $RULESNAME $1
+cp -avr "${RULESNAME}.json" $1
 
 echo "Now include the rules into the tslint.json file"
 cat ./tslint.json

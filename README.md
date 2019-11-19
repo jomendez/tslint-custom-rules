@@ -35,7 +35,8 @@ You can turn an specific rule off by set it to false
     "no-empty-method": true,
     "no-complex-logic-ngoninit": true,
     "no-subscribe-without-unsubscribe": true,
-    "no-commented-code": true
+    "no-commented-code": true,
+    "no-unused-declaration": true
   }
 }
 
@@ -49,3 +50,12 @@ You can turn an specific rule off by set it to false
  - no-empty-method: prevent leave empty methods in the code
  - no-complex-logic-ngoninit: prevent having complex logic in onNgInit() method
  - no-subscribe-without-unsubscribe: prevent subscribe without add the subscription to the unsubscribe array.
+ - no-unused-declaration: prevent the use of un used imports.
+
+
+
+The following command will traverse, recursively through all *.ts files in the project and remove the unused imports. It save the files automatically in place.
+
+BE CAREFUL! This process is only reversible if you are using a source control solution like git or svn, where you can revert changes.
+
+`tslint --config tslint-remove-unused-imports.json --fix --project`

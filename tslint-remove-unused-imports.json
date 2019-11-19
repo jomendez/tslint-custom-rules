@@ -1,0 +1,8 @@
+{
+  "rulesDirectory": [
+    "./jo-custom-ts-rules"
+  ], 
+  "rules": {
+    "no-unused-declaration": true
+  }
+}
